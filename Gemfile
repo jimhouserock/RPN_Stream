@@ -23,6 +23,9 @@ gem 'jbuilder'
 # Boot optimization
 gem 'bootsnap', require: false
 
+# Timezone data for Alpine Linux
+gem 'tzinfo-data'
+
 group :development, :test do
   gem 'debug', platforms: %i[ mri ]
   gem 'rspec-rails'

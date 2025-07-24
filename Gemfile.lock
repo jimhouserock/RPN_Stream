@@ -241,6 +241,8 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2025.2)
+      tzinfo (>= 1.0.0)
     uri (1.0.3)
     useragent (0.16.11)
     web-console (4.2.1)
@@ -276,6 +278,7 @@ DEPENDENCIES
   sqlite3 (>= 2.1)
   stimulus-rails
   turbo-rails
+  tzinfo-data
   web-console
 
 RUBY VERSION

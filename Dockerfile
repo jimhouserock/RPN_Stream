@@ -28,8 +28,8 @@ RUN ln -sf /usr/local/bin/ruby /usr/local/bin/ruby3.2
 # Copy application code
 COPY . .
 
-# Precompile assets
-RUN RAILS_ENV=production bundle exec rails assets:precompile
+# Precompile assets with temporary secret key
+RUN SECRET_KEY_BASE=dummy RAILS_ENV=production bundle exec rails assets:precompile
 
 # Stage 2: Production runtime
 FROM ruby:3.2.3-alpine AS runtime
