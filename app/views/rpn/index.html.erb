@@ -1,0 +1,621 @@
+<!-- Educational Info Box for First-Time Users -->
+<div id="educationalInfo" class="alert alert-info alert-dismissible fade show mb-4" role="alert" style="display: none;">
+  <div class="row align-items-center">
+    <div class="col-md-1 text-center">
+      <i class="bi bi-lightbulb fs-3 text-primary"></i>
+    </div>
+    <div class="col-md-8">
+      <h6 class="alert-heading mb-2">
+        <i class="bi bi-info-circle"></i> Why RPN Matters in Data Engineering
+      </h6>
+      <p class="mb-2">
+        Reverse Polish Notation eliminates parentheses and operator precedence rules, making it ideal for
+        <strong>stack-based computation systems</strong>, <strong>expression parsing in compilers</strong>,
+        <strong>database query optimization</strong>, and <strong>scientific calculators</strong>.
+      </p>
+      <div class="d-flex gap-3">
+        <small><code>10 3 + → 13</code></small>
+        <small><code>10 3 2 + - → 5</code></small>
+        <small><code>10 3 * 2 ^ → 900</code></small>
+      </div>
+    </div>
+    <div class="col-md-3 text-end">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+</div><!-- PART 1: RPN Calculator -->
+<div class="text-center mb-4">
+  <div class="badge bg-primary fs-4 mb-3 px-4 py-3">
+    <i class="bi bi-1-circle"></i> PART 1: RPN CALCULATOR
+  </div>
+</div>
+
+<!-- Main Calculator Interface -->
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-xl-6">
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-gradient text-white text-center py-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <h1 class="h3 mb-0">
+          <i class="bi bi-calculator"></i> Reverse Polish Notation (RPN) Calculator
+        </h1>
+      </div>
+      
+      <div class="card-body p-4">
+        <!-- Calculator Form -->
+        <%= form_with url: calculate_path, method: :post, local: true, class: "mb-4" do |form| %>
+          <div class="mb-3">
+            <%= form.label :expression, "Enter RPN Expression:", class: "form-label fw-semibold" %>
+            <%= form.text_field :expression, 
+                value: @expression, 
+                class: "form-control form-control-lg", 
+                placeholder: "e.g., 10 3 + or 10 3 2 + -",
+                autocomplete: "off",
+                autofocus: true %>
+            <div class="form-text">
+              Enter numbers and operators separated by spaces. Supported operators: + - * / ^
+            </div>
+          </div>
+          
+          <div class="d-flex gap-2">
+            <button type="button" id="randomRpnBtn" class="btn btn-outline-primary">
+              <i class="bi bi-shuffle"></i> Random RPN
+            </button>
+            <%= form.submit "Calculate", class: "btn btn-primary flex-grow-1" %>
+          </div>
+        <% end %>        <!-- Result Display -->
+        <% if @result || @error %>
+          <div class="result-section mt-4 pt-4 border-top">
+            <% if @error %>
+              <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <div>
+                  <strong>Error:</strong> <%= @error %>
+                </div>
+              </div>
+            <% else %>
+              <div class="alert alert-success" role="alert">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-check-circle-fill me-2"></i>
+                  <strong>Result:</strong>
+                  <span class="fs-4 fw-bold text-primary ms-2"><%= @result %></span>
+                </div>
+
+                <!-- Input and Explanation breakdown -->
+                <div class="mt-3 p-3 bg-white rounded border">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <small class="text-muted d-block"><strong>Input (string):</strong></small>
+                      <code class="text-dark">"<%= @expression %>"</code>
+                    </div>
+                    <div class="col-md-6">
+                      <small class="text-muted d-block"><strong>Explanation:</strong></small>
+                      <span class="small text-dark"><%= generate_explanation(@expression) %></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>    <!-- Sample Streaming Data Input & Outputs -->
+    <div class="card mt-4 border-0 shadow-sm">
+      <div class="card-header bg-light d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 text-dark">
+          <i class="bi bi-broadcast"></i> Sample Streaming Data Input & Outputs
+        </h5>
+        <div>
+          <button id="streamToggle" class="btn btn-sm btn-outline-danger">
+            <i class="bi bi-stop-fill"></i> Stop Stream
+          </button>
+          <span id="streamStatus" class="badge bg-success ms-2">Live</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Input (string)</th>
+                <th scope="col">Output (number)</th>
+                <th scope="col">Explanation</th>
+              </tr>
+            </thead>
+            <tbody id="streamingTable">
+              <tr>
+                <td><code>"10 3 +"</code></td>
+                <td><strong>13</strong></td>
+                <td>Equivalent to <code>10 + 3</code></td>
+              </tr>
+              <tr>
+                <td><code>"10 3 2 + -"</code></td>
+                <td><strong>5</strong></td>
+                <td>Equivalent to <code>10 - (3 + 2)</code></td>
+              </tr>
+              <tr>
+                <td><code>"10 3 * 2 ^"</code></td>
+                <td><strong>900</strong></td>
+                <td>Equivalent to <code>(10 * 3)^2</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-3">
+          <small class="text-muted">
+            <strong>How it works:</strong> Numbers are pushed onto a stack, operators pop two numbers, perform the operation, and push the result back.
+            <span id="streamInfo"> | <strong>Streaming:</strong> Real-time RPN calculations simulating data engineering pipeline.</span>
+          </small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PART 2: System Architecture Section -->
+<div class="bg-light py-5 mt-5">
+  <div class="container-fluid px-4">
+    <div class="text-center mb-5">
+      <div class="badge bg-success fs-4 mb-4 px-4 py-3">
+        <i class="bi bi-2-circle"></i> PART 2: SYSTEM DESIGN EXERCISE
+      </div>
+      <h2 class="display-5 fw-bold text-primary mb-3">
+        <i class="bi bi-diagram-3"></i> High-Volume Real-Time RPN Expression Evaluation System
+      </h2>
+      <p class="lead text-muted">Enterprise-Scale Processing Architecture for Mathematical Expressions</p>
+    </div>
+    <!-- Architecture Diagram - Full Width -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card border-0 shadow-lg">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h3 class="mb-0">
+              <i class="bi bi-cpu"></i> System Architecture Diagram
+            </h3>
+          </div>
+          <div class="card-body p-5">
+            <div class="text-center">
+              <div class="border-3 border-primary rounded p-4 bg-white" style="border-style: solid; overflow: auto;">
+                <%= image_tag "data architecture.png",
+                    alt: "High-Volume RPN Data Processing Architecture",
+                    class: "rounded shadow-lg",
+                    style: "display: block; margin: 0 auto; max-width: none; height: auto;" %>
+              </div>
+              <div class="mt-4">
+                <h5 class="text-primary mb-2">
+                  <i class="bi bi-diagram-2"></i> Figure 1: System Architecture Diagram
+                </h5>
+                <p class="text-muted mb-1">
+                  Layered architecture showing data flow from Web UI through Kafka to multiple downstream consumers
+                </p>
+                <small class="text-muted fst-italic">
+                  Complete end-to-end processing pipeline for high-volume RPN expression evaluation
+                  <br><em>Scroll horizontally if needed to view full diagram at original resolution</em>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- System Design Questions & Answers -->
+    <div class="row g-4 mb-5">
+      <!-- Data Ingestion -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-primary shadow">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">
+              <i class="bi bi-cloud-download"></i> Data Ingestion
+            </h4>
+            <small class="opacity-75">How do we ingest real-time data from Kafka?</small>
+          </div>
+          <div class="card-body">
+            <h6 class="text-primary mb-3">🔹 Web UI Layer (Rails)</h6>
+            <ul class="list-unstyled mb-3">
+              <li><i class="bi bi-arrow-right text-success"></i> Users submit RPN expressions via web interface</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Results displayed to users</li>
+            </ul>
+
+            <h6 class="text-primary mb-3">🔹 API Server (Ruby on Rails)</h6>
+            <ul class="list-unstyled mb-3">
+              <li><i class="bi bi-arrow-right text-success"></i> <code>POST /evaluate</code> endpoint receives expressions</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Validates RPN input format</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Publishes to Kafka topic: <code>rpn-expressions</code></li>
+            </ul>
+
+            <div class="bg-light p-3 rounded">
+              <small><strong>Example Flow:</strong></small>
+              <pre class="mb-0 small"><code>User → "10 3 * 2 ^" → API Server → Kafka Topic</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Processing Nodes -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-info shadow">
+          <div class="card-header bg-info text-white">
+            <h4 class="mb-0">
+              <i class="bi bi-cpu-fill"></i> Processing Nodes
+            </h4>
+            <small class="opacity-75">How do we scale evaluation logic for high volume?</small>
+          </div>
+          <div class="card-body">
+            <h6 class="text-info mb-3">🔹 RPN Processor (From Diagram)</h6>
+            <ul class="list-unstyled mb-3">
+              <li><i class="bi bi-arrow-right text-success"></i> <strong>Stateless RPN Evaluator:</strong> Processes expressions independently</li>
+              <li><i class="bi bi-arrow-right text-success"></i> <strong>Auto-scaling:</strong> Scales with throughput demands</li>
+              <li><i class="bi bi-arrow-right text-success"></i> <strong>Same Logic:</strong> Uses identical RPN calculation as this website</li>
+            </ul>
+
+            <h6 class="text-info mb-3">🔹 Processing Flow</h6>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-arrow-right text-success"></i> Subscribes to <code>rpn-expressions</code> topic</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Evaluates expression using RPN algorithm</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Publishes results to <code>evaluated-results</code> topic</li>
+              <li><i class="bi bi-arrow-right text-success"></i> Failed evaluations go to Dead Letter Queue</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Data Flow & Integration -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-6">
+        <div class="card h-100 border-warning shadow">
+          <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">
+              <i class="bi bi-arrow-left-right"></i> Data Flow & Integration
+            </h4>
+            <small class="opacity-75">How do we route results to multiple downstream systems?</small>
+          </div>
+          <div class="card-body">
+            <h6 class="text-warning mb-3">🔹 Message Broker Layer (Kafka)</h6>
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <div class="bg-light p-2 rounded text-center">
+                  <small><strong>rpn-expressions</strong></small><br>
+                  <small class="text-muted">Input topic</small>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-light p-2 rounded text-center">
+                  <small><strong>evaluated-results</strong></small><br>
+                  <small class="text-muted">Output topic</small>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-light p-2 rounded text-center">
+                  <small><strong>evaluation-failures</strong></small><br>
+                  <small class="text-muted">Dead Letter Queue</small>
+                </div>
+              </div>
+            </div>
+
+            <h6 class="text-warning mb-3">🔹 Downstream Consumers</h6>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-graph-up text-primary"></i> <strong>Dashboard:</strong> Real-time display of results</li>
+              <li><i class="bi bi-database text-info"></i> <strong>Analytics Database:</strong> Stores expression, result, timestamp</li>
+              <li><i class="bi bi-bell text-danger"></i> <strong>Operational Systems:</strong> Alerting and downstream processing</li>
+            </ul>
+
+            <div class="bg-light p-3 rounded">
+              <small><strong>End-to-End Example:</strong></small>
+              <ol class="small mb-0">
+                <li>Web UI → API Server → Kafka (rpn-expressions)</li>
+                <li>Kafka → Processor → Kafka (evaluated-results)</li>
+                <li>Kafka → Dashboard/DB/Operational Consumers</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reliability & Fault Tolerance -->
+      <div class="col-lg-6">
+        <div class="card h-100 border-danger shadow">
+          <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">
+              <i class="bi bi-shield-check"></i> Reliability & Fault Tolerance
+            </h4>
+            <small class="opacity-75">How do we ensure high availability and handle failures?</small>
+          </div>
+          <div class="card-body">
+            <h6 class="text-danger mb-3">🔹 High Availability Strategy</h6>
+            <ul class="list-unstyled mb-3">
+              <li><i class="bi bi-check-circle text-success"></i> <strong>Auto-scaling:</strong> Processors scale with Kafka consumer lag</li>
+              <li><i class="bi bi-check-circle text-success"></i> <strong>Stateless Design:</strong> Any processor can handle any expression</li>
+              <li><i class="bi bi-check-circle text-success"></i> <strong>Multiple Instances:</strong> If one processor fails, others continue</li>
+            </ul>
+
+            <h6 class="text-danger mb-3">🔹 Failure Handling</h6>
+            <ul class="list-unstyled mb-3">
+              <li><i class="bi bi-x-circle text-danger"></i> <strong>Processing Failure:</strong> Message goes to <code>evaluation-failures</code> DLQ</li>
+              <li><i class="bi bi-arrow-clockwise text-warning"></i> <strong>Downstream Failure:</strong> Kafka retains messages for replay</li>
+              <li><i class="bi bi-exclamation-triangle text-info"></i> <strong>System Monitoring:</strong> Alerts trigger automatic recovery</li>
+            </ul>
+
+            <div class="bg-light p-3 rounded">
+              <small><strong>Fault Tolerance Features:</strong></small>
+              <ul class="small mb-0">
+                <li>Kafka message persistence and replication</li>
+                <li>Dead Letter Queue for failed evaluations</li>
+                <li>Consumer group rebalancing on failures</li>
+                <li>Circuit breakers for downstream protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monitoring & Alerting -->
+    <div class="row g-4 mb-5">
+      <div class="col-12">
+        <div class="card border-success shadow">
+          <div class="card-header bg-success text-white">
+            <h4 class="mb-0">
+              <i class="bi bi-graph-up"></i> Monitoring & Alerting
+            </h4>
+            <small class="opacity-75">How do we implement monitoring to ensure system health and data quality?</small>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-4">
+                <h6 class="text-success mb-3">🔹 Monitoring Stack</h6>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-bar-chart text-primary"></i> <strong>System Monitoring:</strong> Custom metrics and dashboards</li>
+                  <li><i class="bi bi-cloud text-info"></i> <strong>Infrastructure Monitoring:</strong> Server and application metrics</li>
+                  <li><i class="bi bi-activity text-warning"></i> <strong>Kafka Metrics:</strong> Consumer lag, throughput, partition health</li>
+                </ul>
+              </div>
+              <div class="col-lg-4">
+                <h6 class="text-success mb-3">🔹 Key Metrics</h6>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-speedometer2 text-primary"></i> <strong>Processing Latency:</strong> Time from input to result</li>
+                  <li><i class="bi bi-check-circle text-success"></i> <strong>Success Rate:</strong> Percentage of successful evaluations</li>
+                  <li><i class="bi bi-arrow-up text-info"></i> <strong>Throughput:</strong> Expressions processed per second</li>
+                  <li><i class="bi bi-exclamation-circle text-danger"></i> <strong>Error Rate:</strong> Failed evaluations and DLQ messages</li>
+                </ul>
+              </div>
+              <div class="col-lg-4">
+                <h6 class="text-success mb-3">🔹 Alerting Strategy</h6>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-telephone text-danger"></i> <strong>Critical:</strong> System down → Immediate call</li>
+                  <li><i class="bi bi-envelope text-warning"></i> <strong>Warning:</strong> High latency → Email alert</li>
+                  <li><i class="bi bi-chat text-info"></i> <strong>Info:</strong> Scaling events → Slack notification</li>
+                  <li><i class="bi bi-graph-down text-secondary"></i> <strong>Trends:</strong> Performance degradation → Dashboard alerts</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bg-light p-4 rounded mt-4">
+              <h6 class="text-success mb-3 text-center">🔹 System Health Dashboard</h6>
+              <div class="row text-center">
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="h3 text-primary mb-1">99.9%</div>
+                    <small class="text-muted">Uptime SLA</small>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="h3 text-success mb-1">&lt; 100ms</div>
+                    <small class="text-muted">Processing Time</small>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="h3 text-info mb-1">10K+/sec</div>
+                    <small class="text-muted">Peak Throughput</small>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="border rounded p-3 bg-white">
+                    <div class="h3 text-warning mb-1">24/7</div>
+                    <small class="text-muted">Monitoring</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h6 class="text-success mb-3">🔹 Data Quality Assurance</h6>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="bi bi-shield-check text-success"></i> <strong>Input Validation:</strong> RPN expression format checks</li>
+                    <li><i class="bi bi-calculator text-info"></i> <strong>Result Verification:</strong> Sanity checks on calculated values</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="bi bi-clock-history text-warning"></i> <strong>Timeout Detection:</strong> Long-running calculations flagged</li>
+                    <li><i class="bi bi-arrow-repeat text-primary"></i> <strong>Retry Logic:</strong> Failed messages automatically retried</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Enhanced UX -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Show educational info box on first visit
+  if (!localStorage.getItem('rpn_visited')) {
+    document.getElementById('educationalInfo').style.display = 'block';
+    localStorage.setItem('rpn_visited', 'true');
+  }
+
+  // Handle alert dismissal - store preference
+  const educationalAlert = document.getElementById('educationalInfo');
+  if (educationalAlert) {
+    educationalAlert.addEventListener('closed.bs.alert', function () {
+      localStorage.setItem('rpn_info_dismissed', 'true');
+    });
+  }
+
+  // Auto-focus on input field
+  document.querySelector('input[name="expression"]').focus();
+
+  // Add keyboard shortcut for calculation (Ctrl+Enter or Cmd+Enter)
+  document.querySelector('input[name="expression"]').addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      this.closest('form').submit();
+    }
+  });
+
+  // Random RPN generator
+  const randomRpnBtn = document.getElementById('randomRpnBtn');
+  if (randomRpnBtn) {
+    randomRpnBtn.addEventListener('click', function() {
+      const expressions = [
+        // Simple operations
+        '5 3 +',
+        '10 4 -',
+        '6 7 *',
+        '15 3 /',
+        '2 4 ^',
+
+        // Medium complexity
+        '10 3 2 + -',
+        '5 2 * 3 +',
+        '20 4 / 2 +',
+        '3 2 ^ 1 +',
+        '12 3 / 2 *',
+
+        // Higher complexity
+        '10 3 * 2 ^',
+        '15 7 1 1 + - /',
+        '2 3 ^ 4 + 5 *',
+        '100 10 / 2 ^ 5 -',
+        '6 2 / 3 + 4 *'
+      ];
+
+      const randomExpression = expressions[Math.floor(Math.random() * expressions.length)];
+      document.querySelector('input[name="expression"]').value = randomExpression;
+      document.querySelector('input[name="expression"]').focus();
+    });
+  }
+
+  // Streaming data simulation
+  let streamInterval = null;
+  let isStreaming = true; // Start with streaming enabled by default
+
+  const streamToggle = document.getElementById('streamToggle');
+  const streamStatus = document.getElementById('streamStatus');
+  const streamInfo = document.getElementById('streamInfo');
+  const streamingTable = document.getElementById('streamingTable');
+
+  // RPN expressions with their correct results and explanations
+  const streamingData = [
+    { expr: '5 3 +', result: 8, explanation: 'Equivalent to 5 + 3' },
+    { expr: '12 4 -', result: 8, explanation: 'Equivalent to 12 - 4' },
+    { expr: '6 7 *', result: 42, explanation: 'Equivalent to 6 * 7' },
+    { expr: '20 4 /', result: 5, explanation: 'Equivalent to 20 / 4' },
+    { expr: '3 2 ^', result: 9, explanation: 'Equivalent to 3^2' },
+    { expr: '15 2 3 + -', result: 10, explanation: 'Equivalent to 15 - (2 + 3)' },
+    { expr: '4 5 * 2 +', result: 22, explanation: 'Equivalent to (4 * 5) + 2' },
+    { expr: '100 10 /', result: 10, explanation: 'Equivalent to 100 / 10' },
+    { expr: '2 4 ^ 1 -', result: 15, explanation: 'Equivalent to (2^4) - 1' },
+    { expr: '7 3 + 2 *', result: 20, explanation: 'Equivalent to (7 + 3) * 2' },
+    { expr: '50 5 / 2 ^', result: 100, explanation: 'Equivalent to (50 / 5)^2' },
+    { expr: '8 2 / 3 +', result: 7, explanation: 'Equivalent to (8 / 2) + 3' },
+    { expr: '9 3 ^ 2 /', result: 364.5, explanation: 'Equivalent to (9^3) / 2' },
+    { expr: '25 5 - 4 *', result: 80, explanation: 'Equivalent to (25 - 5) * 4' },
+    { expr: '6 2 * 3 ^', result: 1728, explanation: 'Equivalent to (6 * 2)^3' }
+  ];
+
+  function addStreamingRow(data) {
+    const newRow = document.createElement('tr');
+    newRow.className = 'table-success';
+    newRow.innerHTML = `
+      <td><code>"${data.expr}"</code></td>
+      <td><strong>${data.result}</strong></td>
+      <td>${data.explanation}</td>
+    `;
+
+    // Add to top of table
+    streamingTable.insertBefore(newRow, streamingTable.firstChild);
+
+    // Remove the success highlighting after animation
+    setTimeout(() => {
+      newRow.classList.remove('table-success');
+    }, 1000);
+
+    // Keep only last 10 rows
+    while (streamingTable.children.length > 10) {
+      streamingTable.removeChild(streamingTable.lastChild);
+    }
+  }
+
+  function startStreaming() {
+    isStreaming = true;
+    streamToggle.innerHTML = '<i class="bi bi-stop-fill"></i> Stop Stream';
+    streamToggle.className = 'btn btn-sm btn-outline-danger';
+    streamStatus.textContent = 'Live';
+    streamStatus.className = 'badge bg-success ms-2';
+    streamInfo.style.display = 'inline';
+
+    streamInterval = setInterval(() => {
+      const randomData = streamingData[Math.floor(Math.random() * streamingData.length)];
+      addStreamingRow(randomData);
+    }, 500); // Every 0.5 seconds
+  }
+
+  function stopStreaming() {
+    isStreaming = false;
+    streamToggle.innerHTML = '<i class="bi bi-play-fill"></i> Start Stream';
+    streamToggle.className = 'btn btn-sm btn-outline-primary';
+    streamStatus.textContent = 'Stopped';
+    streamStatus.className = 'badge bg-secondary ms-2';
+    streamInfo.style.display = 'none';
+
+    if (streamInterval) {
+      clearInterval(streamInterval);
+      streamInterval = null;
+    }
+  }
+
+  if (streamToggle) {
+    streamToggle.addEventListener('click', function() {
+      if (isStreaming) {
+        stopStreaming();
+      } else {
+        startStreaming();
+      }
+    });
+
+    // Auto-start streaming when page loads
+    startStreaming();
+  }
+
+  // Enhanced user experience features
+  // Focus management and accessibility improvements
+  document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for better navigation
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+});
+</script>

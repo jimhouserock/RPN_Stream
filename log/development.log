@@ -1,0 +1,1471 @@
+Started GET "/" for 127.0.0.1 at 2025-07-24 00:44:31 +0000
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 15.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 134.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory)
+Caused by: Sprockets::ArgumentError (link_tree argument must be a directory)
+
+Information for: ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+
+Information for cause: Sprockets::ArgumentError (link_tree argument must be a directory):
+  
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.2) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.2) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.2) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.2) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.2) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.2) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.2) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.2) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.2) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.2) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.5) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-24 00:44:32 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-07-24 00:46:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 10.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 20.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 00:46:56 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 22.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 23.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:47:05 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"W7M1MKXM0ahH364aeUW5-_Gu7ANLXNzt34Wga2DdJGYvENNcRnSr2s1pFb1gnRimEbb3UPDDU2D_ndtuaON_CA", "expression"=>"10 3 +", "commit"=>"Calculate"}
+RPN Calculation: '10 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:47:23 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"LxxKmKgNypnZHu52kyQIynoEi4x63fbTznvy3xfRvdxbv6z0S7Ww61OoVdGK_KmXmhyQ38FCeV7uY4naH-_msg", "expression"=>"15 7 1 1 + - / 3 *", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - / 3 *' = 9.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:47:39 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"uDKUt1cBSyV8cOxO7jYj1r05LM1fhanTGyv1AAnhDgDMkXLbtLkxV_bGV-n37oKLXSE3nuQaJl47M44FAd9Vbg", "expression"=>"10 3 * 2 ^", "commit"=>"Calculate"}
+RPN Calculation Error: '10 3 * 2 ^' - Invalid token: '^'
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:48:47 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"uDKUt1cBSyV8cOxO7jYj1r05LM1fhanTGyv1AAnhDgDMkXLbtLkxV_bGV-n37oKLXSE3nuQaJl47M44FAd9Vbg", "expression"=>"10 3 * 2 ^", "commit"=>"Calculate"}
+RPN Calculation: '10 3 * 2 ^' = 
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:48:49 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"4EAVAMlQ6S0_y0_GWPV9yJpGeJZkYDP-LTf011Z90DuU4_NsKuiTX7V99GFBLdyVel5jxd__vHMNL4_SXkOLVQ", "expression"=>"10 3 * 2 ^", "commit"=>"Calculate"}
+RPN Calculation: '10 3 * 2 ^' = 
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:50:10 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"4EAVAMlQ6S0_y0_GWPV9yJpGeJZkYDP-LTf011Z90DuU4_NsKuiTX7V99GFBLdyVel5jxd__vHMNL4_SXkOLVQ", "expression"=>"10 3 * 2 ^", "commit"=>"Calculate"}
+Unexpected RPN Error: '10 3 * 2 ^' - undefined method `nan?' for 900:Integer
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:50:44 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"d-rViGKl3TRlGrDnSf_RQYfNxgGwjrdcC8FR8Xk351cDSTPkgR2nRu-sC0BQJ3AcZ9XdUgsRONEr2Sr0cQm8OQ", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 31.9ms | GC: 27.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | GC: 27.0ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 27.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:52:22 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"fakRXWgPMGn94DJKs99KgYgYw5orct9dJQwKaaK1EtQJCvcxi7dKG3dWie2qB-vcaADYyZDtUNAFFHFsqotJug", "expression"=>"10 3 2 + ", "commit"=>"Calculate"}
+RPN Calculation Error: '10 3 2 + ' - Invalid expression: too many operands (2 remaining)
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:52:46 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"fakRXWgPMGn94DJKs99KgYgYw5orct9dJQwKaaK1EtQJCvcxi7dKG3dWie2qB-vcaADYyZDtUNAFFHFsqotJug", "expression"=>"10 3 2 + ", "commit"=>"Calculate"}
+RPN Calculation Error: '10 3 2 + ' - Invalid expression: too many operands (2 remaining)
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 00:54:40 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 00:57:32 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:57:41 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"3ird5VlBzVAJ0h3f6IYUifUiZ4IjrL_ThZfA88dW7GqqiTuJuvm3IoNkpnjxXrXUFTp80ZgzMF6lj7v2z2i3BA", "expression"=>"15 7 1 1 + - / 3 * ", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - / 3 * ' = 9.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 00:58:09 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"3ird5VlBzVAJ0h3f6IYUifUiZ4IjrL_ThZfA88dW7GqqiTuJuvm3IoNkpnjxXrXUFTp80ZgzMF6lj7v2z2i3BA", "expression"=>"15 7 1 1 + - / 3 * ", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - / 3 * ' = 9.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:05:05 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:05:26 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Tzid2KDqpPatlrGhLwtVbWh5brpRiWlUuaiOd0vcFW87m3u0Q1LehCcgCgY20_QwiGF16eoW5tmZsPVyQ-JOAQ", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/calculate" for 127.0.0.1 at 2025-07-24 01:05:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/calculate"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-24 01:05:37 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:05:44 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:08:24 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"B3mMql8Kugfsa8yM4dYw_Dg_dhDHGvET-uAMAm-zuMpz2mrGvLLAdWbddyv4DpGh2CdtQ3yFfp7a-HcHZ43jpA", "expression"=>"10 3 +", "commit"=>"Calculate"}
+RPN Calculation: '10 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.2ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:09:36 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 10.7ms | GC: 7.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | GC: 9.3ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:10:36 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 9.9ms | GC: 8.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 8.1ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.6ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:10:52 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"qGbvLDXcx-1wxeQxa1QsCHMIoD-zJgTrFcpNadnTCmzcxQlA1mS9n_pzX5ZyjI1VkxC7bAi5i2Y10jZs0e1RAg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 5.2ms | GC: 4.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 4.0ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 8.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:10:53 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"00K3o9ww0c7yZbUPQyg03FcujLG-ZnXtTbjcjhSGau-n4VHPP4irvHjTDqha8JWBtzaX4gX5-mBtoKeLHLgxgQ", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 8.2ms | GC: 7.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 7.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:10:54 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"-9wLK6uGqEFHg71kHDfpI0th2wXeXkLGBiqPd6nKxsmPf-1HSD7SM801BsMF70h-q3nAVmXBzUsmMvRyofSdpw", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 5.9ms | GC: 4.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 4.4ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:10:54 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"qQ4dQLI0YYHZNtBR4noJ_pMXdIxMPpIE68wqIOH__zDdrfssUYwb81OAa_b7oqijcw9v3_ehHYnL1FEl6cGkXg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:10:55 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"2MoML-mbTXHu0wU8fOXF0y03Lzhbw6yTC2vHZiXuwqCsaepDCiM3A2RlvptlPWSOzS80a-BcIx4rc7xjLdCZzg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:36 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"-CobEHa9Moo8P8jxmB41tvxfpadPT0TcqzjHHLLF_vmMif18lQVI-LaJc1aBxpTrHEe-9PTQy1GLILwZuvullw", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"AioZTwnTwkWgxoimyOaCC4SMlnNuJ-MFE3YLThZJMcR2if8j6mu4NypwMwHRPiNWZJSNINW4bIgzbnBLHndqqg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"rsV0a3xH9M7UTEPop89JBjPcv03ozFc-tlpLORP7bPDaZpIHn_-OvF76-E--F-hb08SkHlNT2LOWQjA8G8U3ng", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"DEGf_atSzaqmW0x3xWD2YWDwclDpgnwl_xYXINRCZQx44nmRSOq32Czt99DcuFc8gOhpA1Id86jfDmwl3Hw-Yg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"1N_A30KTte4MKOPMlp0hhlQB8u-PUJ1A_IhmDcCrXvOgfCazoSvPnIaeWGuPRYDbtBnpvDTPEs3ckB0IyJUFnQ", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"tG67Bjmwath9IRfyUgrOZPsByZbThNwnTZQKBPcXXpTAzV1q2ggQqveXrFVL0m85GxnSxWgbU6ptjHEB_ykF-g", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.2ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"1oZVA8UZJJz1j4op9JW3l4UxBw8U-J5sTjhequD2Id2iJbNvJqFe7n85MY7tTRbKZSkcXK9nEeFuICWv6Mh6sw", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.7ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"G22etBgCIWiyYMEWHarKomuB5xX6F2m3AzeV40SaOz5vznjY-7pbGjjWerEEcmv_i5n8RkGI5jojL-7mTKRgUA", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"AhK07MtKko2g6zC7TiEWp2RKnN8LmCdsbZFQaqB2a7l2sVKAKPLo_ypdixxX-bf6hFKHjLAHqOFNiStvqEgw1w", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:39 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"P0TEdCtihZBbA6YrPO9P0w-W23YYUnjBrHluunAMqU1L5yIYyNr_4tG1HYwlN-6O747AJaPN90yMYRW_eDLyIw", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:13:40 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"yQKYLPVESpyjD8blvijOnMcIIhnI6W9hX80wuQZavcK9oX5AFvww7im5fUKn8G_BJxA5SnN24Ox_1Uu8DmTmrA", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:14:02 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.7ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.6ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:15:39 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"3AZGrHDQemVOi7l5lcyCLkYzor0fxB01ko0y9p03f1CopaDAk2gAF8Q9At6MFCNzpiu57qRbkriylUnzlQkkPg", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:18:10 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:27 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"o_wD17wyNLo3GEbfFSH_zYnBUkxfVAU7cYmVeFRvpaDXX-W7X4pOyL2u_XgM-V6QadlJH-TLirZRke59XFH-zg", "expression"=>"15 3 /", "commit"=>"Calculate"}
+RPN Calculation: '15 3 /' = 5.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:31 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"DUUVSisHh3KJGWaAkpBGltvSxTg7BZfV_UMBxQUXEV955vMmyL_9AAOv3SeLSOfLO8rea4CaGFjdW3rADSlKMQ", "expression"=>"2 4 ^", "commit"=>"Calculate"}
+RPN Calculation: '2 4 ^' = 16
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"PSec-QD9W0dolOaniuQhJnysUpUmQUrPki0YwiqQ9hhJhHqV40UhNeIiXQCTPIB7nLRJxp3exUKyNWPHIq6tdg", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:40 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"pdF_4-ks5QBcXu_im0qaqKygyyUgIzy7gWLO-KVzm0LRcpmPCpSfctboVEWCkjv1TLjQdpu8szaherX9rU3ALA", "expression"=>"12 3 / 2 *", "commit"=>"Calculate"}
+RPN Calculation: '12 3 / 2 *' = 8.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:45 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"HmYee5ghslqRzCdQrSeyd6bmVtSrhPv4FZ7HGsQ9kg9qxfgXe5nIKBt6nPe0_xMqRv5NhxAbdHU1hrwfzAPJYQ", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:18:58 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"oCcnLkOvrvuOO-PV6xo_UbUkz5laVIpY30n5weEkgTbUhMFCoBfUiQSNWHLywp4MVTzUyuHLBdX_UYLE6RraWA", "expression"=>"5 8 *", "commit"=>"Calculate"}
+RPN Calculation: '5 8 *' = 40
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:19:16 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 6.0ms | GC: 4.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 4.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-24 01:19:17 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:19:32 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"F9MjFJAQAdyQSJPVW84KjCJ50Qt5yVeLNllnQ_mv-S8_WempQNVnpqkgAXvK9sWMe1qun1VrX-Zby35ZZqbafA", "expression"=>"2 3 ^ 4 + 5 *", "commit"=>"Calculate"}
+RPN Calculation: '2 3 ^ 4 + 5 *' = 60
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:19:36 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"bljKAXDEWStZfPd5ESlnk6Fw_mjrQ7t7k9a1Fz4kKTZG0gC8oAE_UWAUZdeAEaiT-FOB_Mfhsxb-RKwNoS0KZQ", "expression"=>"5 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 3 +' = 8
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:19:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"_SW61c4B4SnC8DgsiZwGhfFhWDaTbJLH_MsmnOGX7FTVr3BoHsSHU_uYqoIYpMmFqEInor_OmqqRWT-Gfp7PBw", "expression"=>"100 10 / 2 ^ 5 -", "commit"=>"Calculate"}
+RPN Calculation: '100 10 / 2 ^ 5 -' = 95.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:20:46 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"oCcnLkOvrvuOO-PV6xo_UbUkz5laVIpY30n5weEkgTbUhMFCoBfUiQSNWHLywp4MVTzUyuHLBdX_UYLE6RraWA", "expression"=>"5 8 *", "commit"=>"Calculate"}
+RPN Calculation: '5 8 *' = 40
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:20:51 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"d3fqtSFMTCdSv38_6Zi3o7XHsUFvemWssO2bLuNQjCoD1AzZwvQ2VdgJxJjwQBb-Vd-qEtTl6iGQ9eAr627XRA", "expression"=>"2 3 ^ 4 + 5 *", "commit"=>"Calculate"}
+RPN Calculation: '2 3 ^ 4 + 5 *' = 60
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:20:52 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"int-r6PTVU8UwLDaileIPesCJKun_7-zfI91rQB7rO3-2JjDQGsvPZ52C32TjylgCxo_-BxgMD5clw6oCEX3gw", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:20:54 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"2EngQ4nNkbqEG8O0qVRpfmNEEsVXkClBQTcRSXDiCd-s6gYvanXryA6teBOwjMgjg1wJluwPpsxhL2pMeNxSsQ", "expression"=>"5 2 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 2 * 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:20:59 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"i2Iz_4uZypBbrdVbb0syGvfp1nxR8M4sihygoa6v1UP_wdWTaCGw4tEbbvx2k5NHF_HNL-pvQaGqBNukppGOLQ", "expression"=>"52 * 3 +", "commit"=>"Calculate"}
+RPN Calculation Error: '52 * 3 +' - Insufficient operands for operator '*'
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:13 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"2SRIjQ3NErXByhXUtI80TTjqEJ-Kk4aEErFdIvj-JUqth67h7nVox0t8rnOtV5UQ2PILzDEMCQkyqSYn8MB-JA", "expression"=>"52 1* 3 +", "commit"=>"Calculate"}
+RPN Calculation Error: '52 1* 3 +' - Invalid token: '1*'
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:16 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"aIQpXYCh64MGjK8i0g3F7du67tBfVizNcSIL3v3GtCEcJ88xYxmR8Yw6FIXL1WSwO6L1g-TJo0BROnDb9fjvTw", "expression"=>"52 1 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '52 1 * 3 +' = 55
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:21 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"czjnBAUR9H8w14hjcoY3RDwgY5dPPrs10sl6FusDIe4HmwFo5qmODbphM8RrXpYZ3Dh4xPShNLjy0QET4z16gA", "expression"=>"52 1* 3 +", "commit"=>"Calculate"}
+RPN Calculation Error: '52 1* 3 +' - Invalid token: '1*'
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:27 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"JgyURKXNcHN8UJOsZYwaTu2JIQcCZi7Xe34qoVeB5sdSr3IoRnUKAfbmKAt8VLsTDZE6VLn5oVpbZlGkX7-9qQ", "expression"=>"52 1 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '52 1 * 3 +' = 55
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:50 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"R_6Z6X55aNYs2gzsCD6z3f7OqxiV2fUakXz9aEry5u8zXX-FncESpKZst0sR5hKAHtawSy5GepexZIZtQsy9gQ", "expression"=>"5 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 3 +' = 8
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:51 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"iTurBVWs0i9_UwA4yR-8szXrst7TkcNO3EC50ZSV1N39mE1pthSoXfXlu5_Qxx3u1fOpjWgOTMP8WMLUnKuPsw", "expression"=>"5 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 3 +' = 8
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:21:52 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Ko8zWtX7TBepy95DIcW0whjOORG9VaX-z_XASTGCabNeLNU2NkM2ZSN9ZeQ4HRWf-NYiQgbKKnPv7btMObwy3Q", "expression"=>"20 4 / 2 +", "commit"=>"Calculate"}
+RPN Calculation: '20 4 / 2 +' = 7.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:22:09 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.5ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:22:10 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"e-cwmrjablIVWd-irl4e_MpqNhIhYnU-BQV1Kqpr4xMPRNb2W2IUIJ_vZAW3hr-hKnItQZr9-rMlHQ4volW4fQ", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:22:15 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"xk6Gz8fUec8-ZribOQaEfYN2gIVj_IT2DoEQ99USZbiy7WCjJGwDvbTQAzwg3iUgY26b1thjC3sumWvy3Sw-1g", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:22:16 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"0Gna7ecg8w6xXT-hWE3UoXX6OYOQLct6OzXDAEIGRemkyjyBBJiJfDvrhAZBlXX8leIi0CuyRPcbLbgFSjgehw", "expression"=>"", "commit"=>"Calculate"}
+RPN Calculation: '' = 0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:22:26 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"or3qfN2o2R4Zh1CGMVOnnVZhsCKCOSOWVz5GM_zUTQvWHgwQPhCjbJMx6yEoiwbAtnmrcTmmrBt3Jj029OoWZQ", "expression"=>"1 1 *", "commit"=>"Calculate"}
+RPN Calculation: '1 1 *' = 1
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:22:32 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"ICyoT0GzKjkhPTkGxWiVnufuO94Q3_-OaVOn7ia7lg9Uj04jogtQS6uLgqHcsDTDB_YgjatAcANJS9zrLoXNYQ", "expression"=>"1 1 +", "commit"=>"Calculate"}
+RPN Calculation: '1 1 +' = 2
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:24:34 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Hj5Xy8nlxpt-rTuIdebT_qMcqLv-OLi89p35KI_gAN9qnbGnKl286fQbgC9sPnKjQwSz6EWnNzHWhYIth95bsQ", "expression"=>"12 3 / 2 *", "commit"=>"Calculate"}
+RPN Calculation: '12 3 / 2 *' = 8.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:24:36 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"87CehTLaXxcAXFSLAWp-UtO1CqWk06zpTOeYAG16DNCHE3jp0WIlZYrq7ywYst8PM60R9h9MI2Rs_-MFZURXvg", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:24:39 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"74q0n_p0Oir_cKgKUBC9hII4yS1R1Y49gwrAJsDr7LybKVLzGcxAWHXGE61JyBzZYiDSfupKAbCjErsjyNW30g", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.4ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:24:43 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"s6ocitF3wBXAT7RGFMMM3uO9a_Qe6th2nyTDBKGE7cXHCfrmMs-6Z0r5D-ENG62DA6Vwp6V1V_u_PLgBqbq2qw", "expression"=>"6 2 / 3 + 4 *", "commit"=>"Calculate"}
+RPN Calculation: '6 2 / 3 + 4 *' = 24.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:24:58 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"pL3RSXrioN0DvxqKkfT9ZeZuSdOjxh-NFrsma_xoMbbQHjclmVrar4kJoS2ILFw4BnZSgBhZkAA2o11u9FZq2A", "expression"=>"6 2 / 3 + 4 *", "commit"=>"Calculate"}
+RPN Calculation: '6 2 / 3 + 4 *' = 24.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:25:35 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:28:21 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:30:40 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:30:44 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Lsymc9U21sjml0ifn5QHhM57V5tUM-WrSTn1yvNrxd9ab0AfNo6sumwh8ziGTKbZLmNMyO-saiZpIY7P-1WesQ", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:30:47 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Oexx8dWK_1N8PZjDJkzILgglh0qiOrLOYu5441GV1HRNT5edNjKFIfaLI2Q_lGlz6D2cGRmlPUNC9gPmWauPGg", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:30:54 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"cM6aop6HHye5qMiSO6vsefm41k7fxQWukLK17F4DnkEEbXzOfT9lVTMeczUic00kGaDNHWRaiiOwqs7pVj3FLw", "expression"=>"2 3 ^ 4 + 5 *", "commit"=>"Calculate"}
+RPN Calculation: '2 3 ^ 4 + 5 *' = 60
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:30:56 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"BdZjYp5kVGj1URt5tQZTDbjS2C_svld6xV8iGxpuu4JxdYUOfdwuGn_noN6s3vJQWMrDfFch2PflR1keElDg7A", "expression"=>"20 4 / 2 +", "commit"=>"Calculate"}
+RPN Calculation: '20 4 / 2 +' = 7.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:31:33 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"jfrQzwv5tM69gQTrM78wcg_WjeF03wSjCwYHYjwVg5b5WTaj6EHOvDc3v0wqZ5Ev786Wss9Aiy4rHnxnNCvY-A", "expression"=>"20 4 / 2 +", "commit"=>"Calculate"}
+RPN Calculation: '20 4 / 2 +' = 7.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.3ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:31:35 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"WitZKYPuulhbiE6lUq9J75ASQnevM8xsrFZ_fN-B57IuiL9FYFbAKtE-9QJLd-iycApZJBSsQ-GMTgR517-83A", "expression"=>"6 7 *", "commit"=>"Calculate"}
+RPN Calculation: '6 7 *' = 42
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:31:36 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"DTBEu_FlsLPFxG1BLGTqNJSK8LPz3PkWpaOdK1WA8715k6LXEt3KwU9y1uY1vEtpdJLr4EhDdpuFu-YuXb6o0w", "expression"=>"15 7 1 1 + - /", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - /' = 3.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:31:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"AP1gUFmiQ9j0kUD8SoZhSiR0orBEaSyoj2V2XhL2-yF0XoY8uho5qn4n-1tTXsAXxGy54__2oyWvfQ1bGsigTw", "expression"=>"12 3 / 2 *", "commit"=>"Calculate"}
+RPN Calculation: '12 3 / 2 *' = 8.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.3ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:32:12 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:28 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Ixo_APcsYb1Ak7SvjGhne7XXFWmSwb5ZVVqwmzakoatXudlsFJQbz8olDwiVsMYmVc8OOileMdR1QsuePpr6xQ", "expression"=>"5 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 3 +' = 8
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.3ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:30 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"WAkKEmH2gXZRaj4JhCCXdxFOFOeHuzXGHIjnXt-ILFMsqux-gk77BNvcha6d-DYq8VYPtDwkuks8kJxb17Z3PQ", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:31 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"zWDFS_LcTKE951wTmYu4OrtjCNf-GUbyVA_y-jvXIVK5wyMnEWQ207dR57SAUxlnW3sThEWGyX90F4n_M-l6PA", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:32 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"fka7FUKnYeZ7foh3vmSwrxx4RUWUXzvlcJdnPo5LiWcK5V15oR8blPHIM9CnvBHy_GBeFi_AtGhQjxw7hnXSCQ", "expression"=>"5 2 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 2 * 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:33 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"AzdEa-3NntIR9qkPd2GMKJ597Fy79kCj-Vm3oqJq-SR3lKIHDnXkoJtAEqhuuS11fmX3DwBpzy7ZQcynqlSiSg", "expression"=>"6 7 *", "commit"=>"Calculate"}
+RPN Calculation: '6 7 *' = 42
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:34 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"GHFmQu5-XLt53HDPvsD1e-8pCtifHLIFPwdlCWQviYJs0oAuDcYmyfNqy2inGFQmDzERiySDPYgfHx4MbBHS7A", "expression"=>"100 10 / 2 ^ 5 -", "commit"=>"Calculate"}
+RPN Calculation: '100 10 / 2 ^ 5 -' = 95.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:42 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"1hIHfwXkicrPYpdcxveLi6u9N8VXluSee6nKfZaV7cuiseET5lzzuEXULPvfLyrWS6UsluwJaxNbsbF4nqu2pQ", "expression"=>"100 10 / 2 ^ 5 -", "commit"=>"Calculate"}
+RPN Calculation: '100 10 / 2 ^ 5 -' = 95.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:43 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"xUVUX_8XfuhxqRvWgVU0AGpNAq9ztiWk80A857aCEmqx5rIzHK8EmvsfoHGYjZVdilUZ_MgpqinTWEfivrxJBA", "expression"=>"5 2 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 2 * 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:49 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"ZwdLMABApcPmWPIfnLloFjoiLtHzfdeQfmJN7brQ8jMTpK1c4_jfsWzuSbiFYclL2jo1gkjiWB1eejbosu6pXQ", "expression"=>"5 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 3 +' = 8
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:50 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Vmd_VavRn470VLPB_yb7hfmG7EsRdlK5sL_TiZr4BFQixJk5SGnl_H7iCGbm_lrYGZ73GKrp3TSQp6iMksZfOg", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:51 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"3-KeG4MotBl2Czy4mnOdDEZbokvSc4yFTZRjyV7LnbyrQXh3YJDOa_y9hx-DqzxRpkO5GGnsAwhtjBjMVvXG0g", "expression"=>"6 2 / 3 + 4 *", "commit"=>"Calculate"}
+RPN Calculation: '6 2 / 3 + 4 *' = 24.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:32:53 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"aqWQF0Pctaw7dZbTlQZrszxqRh5AVxqf-c9Zdneu788eBnZ7oGTP3rHDLXSM3sru3HJdTfvIlRLZ1yJzf5C0oQ", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:40:21 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"aqWQF0Pctaw7dZbTlQZrszxqRh5AVxqf-c9Zdneu788eBnZ7oGTP3rHDLXSM3sru3HJdTfvIlRLZ1yJzf5C0oQ", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 01:44:20 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"ZitghkrgijmRfuHyR2G-vVkodAaY3Ecye8CbJV2R-T4SiIbqqVjwSxvIWlVeuR_guTBvVSNDyL9b2OAgVa-iUA", "expression"=>"2 3 ^ 4 + 5 *", "commit"=>"Calculate"}
+RPN Calculation: '2 3 ^ 4 + 5 *' = 60
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 11.2ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (The asset "data architecture.png" is not present in the asset pipeline.
+)
+Caused by: Sprockets::Rails::Helper::AssetNotFound (The asset "data architecture.png" is not present in the asset pipeline.
+)
+
+Information for: ActionView::Template::Error (The asset "data architecture.png" is not present in the asset pipeline.
+):
+    157:             <i class="bi bi-cpu"></i> System Architecture Diagram
+    158:           </h4>
+    159:           <div class="border rounded p-3 bg-light">
+    160:             <%= image_tag "data architecture.png",
+    161:                 alt: "High-Volume RPN Data Processing Architecture",
+    162:                 class: "img-fluid rounded shadow-sm",
+    163:                 style: "max-width: 100%; height: auto;" %>
+  
+app/views/rpn/index.html.erb:160
+app/controllers/rpn_controller.rb:43:in `calculate'
+
+Information for cause: Sprockets::Rails::Helper::AssetNotFound (The asset "data architecture.png" is not present in the asset pipeline.
+):
+  
+app/views/rpn/index.html.erb:160
+app/controllers/rpn_controller.rb:43:in `calculate'
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:46:11 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 355.2ms | GC: 52.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 357.8ms | GC: 52.2ms)
+Completed 200 OK in 362ms (Views: 359.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 52.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:51:26 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 7.6ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.8ms)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 01:59:47 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:27 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"k0I72IBLbVTT9SRhKe5d_GbBHkI-p88kieUWMzntzwXn4d20Y_MXJllDn8YwNvyhhtkFEYU4QKmp_W02MdOUaw", "expression"=>"6 7 *", "commit"=>"Calculate"}
+RPN Calculation: '6 7 *' = 42
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:29 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Gcm-qPbVxQgv0mC5GLlLb8C6vKOi4kZvb_VcGVPvYJ9taljEFW2_eqVk2x4BYeoyIKKn8Bl9yeJP7SccW9E78Q", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:30 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"ozYwMjD606wWCy4qqwPGa9XdwUXKBzH8jou64puIr8HXldZe00Kp3py9lY2y22c2NcXaFnGYvnGuk8Hnk7b0rw", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.1ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:31 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"2MZ8p1p7A4szmZ0CYJ1G_I2HQmG7U-wTPa1EuSKLER6sZZrLucN5-bkvJqV5ReehbZ9ZMgDMY54dtT-8KrVKcA", "expression"=>"10 3 * 2 ^", "commit"=>"Calculate"}
+RPN Calculation: '10 3 * 2 ^' = 900
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.5ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:33 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"Sf4foiXsIBHyH4bxedqt5tYCMo7uEuTlY2bKoQyE-hM9XfnOxlRaY3ipPVZgAgy7Nhop3VWNa2hDfrGkBLqhfQ", "expression"=>"12 3 / 2 *", "commit"=>"Calculate"}
+RPN Calculation: '12 3 / 2 *' = 8.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:36 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"o_t-ivv5lBdjCLXJlP2DLSrwpjm8V3zDftuOVRxsaj7XWJjmGEHuZem-Dm6NJSJwyui9agfI805ew_VQFFIxUA", "expression"=>"15 7 1 1 + - /", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - /' = 3.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:04:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"FW_UHpYGq_N8dlewmV3v4UmFIreE76SJwTufr8f2g_hhzDJydb7RgfbA7BeAhU68qZ055D9wKwThI-Sqz8jYlg", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 02:06:34 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 10.4ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | GC: 1.1ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:06:38 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"lXeF5DznVUi1EoIWY9TRIxrqltWTl2cYBTEsM8MQkGnh1GOI318vOj-kObF6DHB--vKNhigI6JUlKVc2yy7LBw", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.3ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:09:44 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"lXeF5DznVUi1EoIWY9TRIxrqltWTl2cYBTEsM8MQkGnh1GOI318vOj-kObF6DHB--vKNhigI6JUlKVc2yy7LBw", "expression"=>"3 2 ^ 1 +", "commit"=>"Calculate"}
+RPN Calculation: '3 2 ^ 1 +' = 10
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 02:12:13 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 37.1ms | GC: 29.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.0ms | GC: 32.7ms)
+Completed 200 OK in 56ms (Views: 50.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 37.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:35 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"6pW8dNFLnW2QGjQZ8YpcvufC1LaFhrHSI0rqrFWudimeNloYMvPnHxqsj77oUv3jB9rP5T4ZPl8DUpGpXZAtRw", "expression"=>"6 2 / 3 + 4 *", "commit"=>"Calculate"}
+RPN Calculation: '6 2 / 3 + 4 *' = 24.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 15.7ms | GC: 12.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | GC: 14.8ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 16.4ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:37 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"E2JJXzeRyaxDXiwiBcfM3BrG-nAqOQLZsJUt7Z_54INnwa8z1Cmz3snol4UcH22B-t7hI5GmjVSQjVbol8e77Q", "expression"=>"20 4 / 2 +", "commit"=>"Calculate"}
+RPN Calculation: '20 4 / 2 +' = 7.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.9ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.9ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:39 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"WioHNdi0-_m4won9O3b7U-F_nzXOOH9pLyzdpFGca-4uieFZOwyBizJ0MloirloOAWeEZnWn8OQPNKahWaIwgA", "expression"=>"12 3 / 2 *", "commit"=>"Calculate"}
+RPN Calculation: '12 3 / 2 *' = 8.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.6ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:40 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"S60coJCcKpBM2lQXoLXlHzG3B8CK11p4PCV11ok2r2Q_DvrMcyRQ4sZs77C5bURC0a8ckzFI1fUcPQ7TgQj0Cg", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:42 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"PX6UtSfXEUIsntOw0Vd5YjefhwJZH7tcMDTvf9pHg9BJ3XLZxG9rMKYoaBfIj9g_14ecUeKANNEQLJR60nnYvg", "expression"=>"10 4 -", "commit"=>"Calculate"}
+RPN Calculation: '10 4 -' = 6
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:44 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"D6Q2Vh9kWCf5JcMbAy5DLlDKhwrps5-dAt17kevp-nB7B9A6_NwiVXOTeLwa9uJzsNKcWVIsEBAixQCU49ehHg", "expression"=>"10 3 2 + -", "commit"=>"Calculate"}
+RPN Calculation: '10 3 2 + -' = 5
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.7ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:12:47 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"vkR33fhe6wBJWDj9luQ8VSnpletVAnMTCgIcupd2kV3K55GxG-aRcsPug1qPPJ0IyfGOuO6d_J4qGme_n0jKMw", "expression"=>"5 2 * 3 +", "commit"=>"Calculate"}
+RPN Calculation: '5 2 * 3 +' = 13
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.3ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 02:16:50 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 8.1ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.7ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-24 02:18:14 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 6.6ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 1.4ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2025-07-24 02:22:10 +0000
+Processing by RpnController#calculate as HTML
+  Parameters: {"authenticity_token"=>"YzC6dQm_tKMTqEkSHFLVBq-3fFIK_WL8wr7n4UHubwMXk1wZ6gfO0Zke8rUFinRbT69nAbFi7XHippzkSdA0bQ", "expression"=>"15 7 1 1 + - /", "commit"=>"Calculate"}
+RPN Calculation: '15 7 1 1 + - /' = 3.0
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+

@@ -1,0 +1,37 @@
+{
+  "name": "rpn-calculator",
+  "description": "RPN Calculator - Reverse Polish Notation Evaluator",
+  "author": "Jimmy Lin",
+  "framework": "ruby-on-rails",
+  "buildType": "docker",
+  "dockerfile": "Dockerfile",
+  "port": 3000,
+  "healthCheck": {
+    "enabled": true,
+    "path": "/",
+    "interval": 30,
+    "timeout": 10,
+    "retries": 3
+  },
+  "environment": {
+    "RAILS_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true",
+    "RAILS_LOG_TO_STDOUT": "true"
+  },
+  "volumes": [
+    {
+      "hostPath": "./storage",
+      "containerPath": "/app/storage",
+      "description": "SQLite database and file storage"
+    }
+  ],
+  "scaling": {
+    "minReplicas": 1,
+    "maxReplicas": 3,
+    "targetCPU": 70
+  },
+  "resources": {
+    "memory": "512Mi",
+    "cpu": "500m"
+  }
+}
