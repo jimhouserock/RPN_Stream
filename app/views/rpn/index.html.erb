@@ -6,10 +6,10 @@
     </div>
     <div class="col-md-8">
       <h6 class="alert-heading mb-2">
-        <i class="bi bi-info-circle"></i> Why RPN Matters in Data Engineering
+        <i class="bi bi-info-circle"></i> Why Postfix Notation (RPN) Matters in Data Engineering
       </h6>
       <p class="mb-2">
-        Reverse Polish Notation eliminates parentheses and operator precedence rules, making it ideal for
+        Postfix notation (Reverse Polish Notation) eliminates parentheses and operator precedence rules, making it ideal for
         <strong>stack-based computation systems</strong>, <strong>expression parsing in compilers</strong>,
         <strong>database query optimization</strong>, and <strong>scientific calculators</strong>.
       </p>
@@ -23,10 +23,10 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
-</div><!-- PART 1: RPN Calculator -->
+</div><!-- PART 1: Postfix Calculator -->
 <div class="text-center mb-4">
   <div class="badge bg-primary fs-4 mb-3 px-4 py-3">
-    <i class="bi bi-1-circle"></i> PART 1: RPN CALCULATOR
+    <i class="bi bi-1-circle"></i> PART 1: POSTFIX CALCULATOR
   </div>
 </div>
 
@@ -36,29 +36,30 @@
     <div class="card shadow-lg border-0">
       <div class="card-header bg-gradient text-white text-center py-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <h1 class="h3 mb-0">
-          <i class="bi bi-calculator"></i> Reverse Polish Notation (RPN) Calculator
+          <i class="bi bi-calculator"></i> Postfix Calculator
         </h1>
+        <p class="mb-0 mt-1 opacity-90">Reverse Polish Notation (RPN)</p>
       </div>
       
       <div class="card-body p-4">
         <!-- Calculator Form -->
         <%= form_with url: calculate_path, method: :post, local: true, class: "mb-4" do |form| %>
           <div class="mb-3">
-            <%= form.label :expression, "Enter RPN Expression:", class: "form-label fw-semibold" %>
-            <%= form.text_field :expression, 
-                value: @expression, 
-                class: "form-control form-control-lg", 
-                placeholder: "e.g., 10 3 + or 10 3 2 + -",
+            <%= form.label :expression, "Enter Postfix Expression:", class: "form-label fw-semibold" %>
+            <%= form.text_field :expression,
+                value: @expression,
+                class: "form-control form-control-lg",
+                placeholder: "e.g., 10 3 + or 10 3 2 + - (Reverse Polish Notation)",
                 autocomplete: "off",
                 autofocus: true %>
             <div class="form-text">
               Enter numbers and operators separated by spaces. Supported operators: + - * / ^
             </div>
           </div>
-          
+
           <div class="d-flex gap-2">
             <button type="button" id="randomRpnBtn" class="btn btn-outline-primary">
-              <i class="bi bi-shuffle"></i> Random RPN
+              <i class="bi bi-shuffle"></i> Random Expression
             </button>
             <%= form.submit "Calculate", class: "btn btn-primary flex-grow-1" %>
           </div>

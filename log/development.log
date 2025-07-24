@@ -1469,3 +1469,12 @@ RPN Calculation: '15 7 1 1 + - /' = 3.0
 Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-07-24 02:54:11 +0000
+Processing by RpnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering rpn/index.html.erb within layouts/application
+  Rendered rpn/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
