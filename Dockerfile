@@ -17,15 +17,19 @@ WORKDIR /app
 
 # Copy Gemfile and install gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local deployment 'true' && \
-    bundle config set --local without 'development test' && \
+
+# Install gems without deployment mode first
+RUN bundle config set --local without 'development test' && \
     bundle install --jobs 4 --retry 3
+
+# Create ruby3.2 symlink for compatibility
+RUN ln -sf /usr/local/bin/ruby /usr/local/bin/ruby3.2
 
 # Copy application code
 COPY . .
 
-# Precompile assets (if using asset pipeline)
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+# Precompile assets
+RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 # Stage 2: Production runtime
 FROM ruby:3.2.3-alpine AS runtime
@@ -51,6 +55,9 @@ COPY --from=builder --chown=appuser:appgroup /usr/local/bundle /usr/local/bundle
 # Copy and setup entrypoint script
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Create ruby3.2 symlink for runtime compatibility
+RUN ln -sf /usr/local/bin/ruby /usr/local/bin/ruby3.2
 
 # Create necessary directories
 RUN mkdir -p tmp/pids tmp/cache tmp/sockets log storage && \
