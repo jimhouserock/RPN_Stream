@@ -2,7 +2,7 @@
 # Optimized for production deployment with Dokploy
 
 # Stage 1: Build environment
-FROM ruby:3.0-alpine AS builder
+FROM ruby:3.2.3-alpine AS builder
 
 # Install build dependencies
 RUN apk add --no-cache \
@@ -28,7 +28,7 @@ COPY . .
 RUN bundle exec rails assets:precompile RAILS_ENV=production
 
 # Stage 2: Production runtime
-FROM ruby:3.0-alpine AS runtime
+FROM ruby:3.2.3-alpine AS runtime
 
 # Install runtime dependencies
 RUN apk add --no-cache \
