@@ -18,21 +18,49 @@
 
     <style>
       /* Custom CSS inline to avoid asset pipeline issues */
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
-        font-size: 1.1rem; /* Increased base font size */
+        font-size: 1rem;
       }
-      h1, h2, h3, h4, h5, h6 { font-size: 1.2em; } /* Larger headings */
-      .form-control { font-size: 1.1rem; } /* Larger form inputs */
-      .btn { font-size: 1.05rem; } /* Larger buttons */
-      .alert { font-size: 1.05rem; } /* Larger alerts */
-      .table { font-size: 1.05rem; } /* Larger table text */
+
+      /* Mobile-first responsive design */
+      @media (min-width: 768px) {
+        body { font-size: 1.1rem; }
+        h1, h2, h3, h4, h5, h6 { font-size: 1.2em; }
+        .form-control { font-size: 1.1rem; }
+        .btn { font-size: 1.05rem; }
+        .alert { font-size: 1.05rem; }
+        .table { font-size: 1.05rem; }
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 767px) {
+        .container { padding-left: 15px; padding-right: 15px; }
+        .card-body { padding: 1rem !important; }
+        .btn { padding: 0.5rem 1rem; }
+        .form-control { font-size: 16px; } /* Prevents zoom on iOS */
+      }
+
       .bg-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; }
       .card { border-radius: 15px; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
       .card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important; }
-      .form-control-lg { border-radius: 10px; border: 2px solid #e9ecef; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
-      .form-control-lg:focus { border-color: #667eea; box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25); }
+      .form-control { border-radius: 8px; border: 2px solid #e9ecef; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+      .form-control:focus { border-color: #667eea; box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25); }
+
+      /* Smooth result appearance */
+      .result-section {
+        animation: fadeInUp 0.3s ease-out;
+        scroll-margin-top: 20px;
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
       .btn { border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
       .btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; }
       .btn-primary:hover { background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); }
