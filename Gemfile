@@ -24,7 +24,7 @@ gem 'jbuilder'
 gem 'bootsnap', require: false
 
 group :development, :test do
-  gem 'debug', platforms: %i[ mri windows ]
+  gem 'debug', platforms: %i[ mri ]
   gem 'rspec-rails'
 end
 
