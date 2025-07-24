@@ -1,8 +1,9 @@
-# RPN Calculator - Reverse Polish Notation Evaluator
+# Postfix Expression Calculator - Reverse Polish Notation Evaluator
 
 **Author:** Jimmy Lin
 **Framework:** Ruby on Rails
 **Built by:** [vibe8.app](https://vibe8.app)
+**Live App:** [https://postfix.vibe8.app](https://postfix.vibe8.app)
 
 A professional-grade Ruby on Rails application implementing Reverse Polish Notation (RPN) expression evaluation with enterprise-scale system architecture design.
 
@@ -10,6 +11,7 @@ A professional-grade Ruby on Rails application implementing Reverse Polish Notat
 
 | Component | File | Description |
 |-----------|------|-------------|
+| 🌐 **Live App** | [postfix.vibe8.app](https://postfix.vibe8.app) | Try the calculator online |
 | 🔧 **Core Algorithm** | [rpn_calculator.rb](app/models/rpn_calculator.rb) | Stack-based RPN evaluation logic |
 | 🎮 **Web Controller** | [rpn_controller.rb](app/controllers/rpn_controller.rb) | HTTP request handling |
 | 🖥️ **User Interface** | [index.html.erb](app/views/rpn/index.html.erb) | Calculator UI + Architecture |
@@ -21,7 +23,7 @@ A professional-grade Ruby on Rails application implementing Reverse Polish Notat
 
 This project consists of two main parts:
 
-### **PART 1: RPN Calculator Implementation**
+### **PART 1: Postfix Expression Calculator Implementation**
 - Stack-based RPN evaluation algorithm
 - Ruby on Rails web interface
 - Comprehensive unit testing
@@ -35,9 +37,9 @@ This project consists of two main parts:
 
 ## 🎯 Overview
 
-This application demonstrates both algorithmic implementation and system architecture design, showcasing how a simple RPN calculator can scale to handle enterprise-level data processing workloads.
+This application demonstrates both algorithmic implementation and system architecture design, showcasing how a simple postfix expression calculator can scale to handle enterprise-level data processing workloads.
 
-## 🔧 PART 1: RPN Algorithm Implementation
+## 🔧 PART 1: Postfix Expression Algorithm Implementation
 
 ### Core RPN Evaluation Process
 
@@ -198,13 +200,13 @@ RubyRPN/
 ```
 
 **Quick Access Links:**
-- **Core Logic**: [RPN Calculator](app/models/rpn_calculator.rb) | [Controller](app/controllers/rpn_controller.rb) | [UI](app/views/rpn/index.html.erb)
+- **Core Logic**: [Postfix Calculator](app/models/rpn_calculator.rb) | [Controller](app/controllers/rpn_controller.rb) | [UI](app/views/rpn/index.html.erb)
 - **Tests**: [Model Tests](spec/models/rpn_calculator_spec.rb) | [Controller Tests](spec/controllers/rpn_controller_spec.rb)
 - **Deployment**: [Dockerfile](Dockerfile) | [Docker Compose](docker-compose.yml) | [Dokploy Config](dokploy.json)
 
 ## 🎯 Key Features
 
-### Part 1: RPN Calculator
+### Part 1: Postfix Expression Calculator
 - Stack-based algorithm with O(n) complexity
 - Comprehensive error handling and validation
 - Modern responsive web interface
