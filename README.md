@@ -6,6 +6,17 @@
 
 A professional-grade Ruby on Rails application implementing Reverse Polish Notation (RPN) expression evaluation with enterprise-scale system architecture design.
 
+## 🔗 **Quick Navigation**
+
+| Component | File | Description |
+|-----------|------|-------------|
+| 🔧 **Core Algorithm** | [rpn_calculator.rb](app/models/rpn_calculator.rb) | Stack-based RPN evaluation logic |
+| 🎮 **Web Controller** | [rpn_controller.rb](app/controllers/rpn_controller.rb) | HTTP request handling |
+| 🖥️ **User Interface** | [index.html.erb](app/views/rpn/index.html.erb) | Calculator UI + Architecture |
+| ✅ **Unit Tests** | [rpn_calculator_spec.rb](spec/models/rpn_calculator_spec.rb) | 24 comprehensive test cases |
+| 🌐 **Controller Tests** | [rpn_controller_spec.rb](spec/controllers/rpn_controller_spec.rb) | Web interface testing |
+| 🐳 **Deployment** | [Dockerfile](Dockerfile) | Production containerization |
+
 ## 📋 Project Structure
 
 This project consists of two main parts:
@@ -92,21 +103,36 @@ This section addresses enterprise-scale processing of RPN expressions in a distr
 - Data quality assurance with input validation and result verification
 - SLA monitoring: 99.9% uptime, <100ms processing time, 10K+/sec throughput
 
-## 🧪 Testing & Quality Assurance
+## 📂 **Key Files & Components**
 
-### Comprehensive Test Suite
-**Location:** `spec/models/rpn_calculator_spec.rb`, `spec/controllers/rpn_controller_spec.rb`
+### 🔧 **Core RPN Logic**
+- **[📋 RPN Calculator Model](app/models/rpn_calculator.rb)** - Main algorithm implementation
+- **[🎮 RPN Controller](app/controllers/rpn_controller.rb)** - Web interface logic
+- **[🖥️ Calculator UI](app/views/rpn/index.html.erb)** - User interface with Part 1 & Part 2
 
-**Coverage includes:**
-- **Unit Tests**: All RPN operations and edge cases (21 test cases)
-- **Controller Tests**: Web interface and error handling
-- **Edge Cases**: Division by zero, insufficient operands, invalid tokens
-- **Sample Data**: All provided test cases from requirements
+### 🧪 **Testing & Quality Assurance**
+- **[✅ Model Unit Tests](spec/models/rpn_calculator_spec.rb)** - 24 comprehensive test cases
+- **[🌐 Controller Tests](spec/controllers/rpn_controller_spec.rb)** - Web interface testing
+- **[⚙️ Test Configuration](spec/rails_helper.rb)** - RSpec setup and configuration
+
+### 📊 **Sample Data & Test Cases**
+**Built-in test expressions in [Model Tests](spec/models/rpn_calculator_spec.rb):**
+- `"10 3 +"` → `13` (Basic addition)
+- `"10 3 2 + -"` → `5` (Complex: 10 - (3 + 2))
+- `"10 3 * 2 ^"` → `900` (Exponentiation: (10 * 3)^2)
+- `"15 7 1 1 + - / 3 *"` → `5` (Multi-step calculation)
+
+### 🐳 **Deployment Files**
+- **[🐋 Dockerfile](Dockerfile)** - Multi-stage production build
+- **[📦 Docker Compose](docker-compose.yml)** - Dokploy deployment
+- **[🚀 Entrypoint Script](docker-entrypoint.sh)** - Container initialization
+- **[⚙️ Dokploy Config](dokploy.json)** - Platform-specific settings
 
 ### Running Tests
 ```bash
 bundle exec rspec                              # Run all tests
 bundle exec rspec spec/models/rpn_calculator_spec.rb    # Model tests only
+bundle exec rspec spec/controllers/rpn_controller_spec.rb # Controller tests only
 ```
 
 ## 🐳 Deployment
@@ -159,14 +185,22 @@ rails server           # Start development server
 ## 📁 Project Structure
 ```
 RubyRPN/
-├── app/models/rpn_calculator.rb     # Core RPN algorithm (Part 1)
-├── app/controllers/rpn_controller.rb # Web interface controller
-├── app/views/rpn/index.html.erb     # UI with Part 1 & Part 2 sections
-├── spec/                            # Comprehensive test suite
-├── data architecture.png            # System architecture diagram
-├── Dockerfile & docker-compose.yml  # Deployment configuration
-└── README.md                        # This documentation
+├── app/models/rpn_calculator.rb     # 🔧 Core RPN algorithm (Part 1)
+├── app/controllers/rpn_controller.rb # 🎮 Web interface controller
+├── app/views/rpn/index.html.erb     # 🖥️ UI with Part 1 & Part 2 sections
+├── spec/models/rpn_calculator_spec.rb # ✅ Model unit tests (24 cases)
+├── spec/controllers/rpn_controller_spec.rb # 🌐 Controller tests
+├── data architecture.png            # 📊 System architecture diagram
+├── Dockerfile & docker-compose.yml  # 🐳 Deployment configuration
+├── docker-entrypoint.sh            # 🚀 Container initialization
+├── dokploy.json                     # ⚙️ Dokploy deployment config
+└── README.md                        # 📖 This documentation
 ```
+
+**Quick Access Links:**
+- **Core Logic**: [RPN Calculator](app/models/rpn_calculator.rb) | [Controller](app/controllers/rpn_controller.rb) | [UI](app/views/rpn/index.html.erb)
+- **Tests**: [Model Tests](spec/models/rpn_calculator_spec.rb) | [Controller Tests](spec/controllers/rpn_controller_spec.rb)
+- **Deployment**: [Dockerfile](Dockerfile) | [Docker Compose](docker-compose.yml) | [Dokploy Config](dokploy.json)
 
 ## 🎯 Key Features
 
