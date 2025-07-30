@@ -63,7 +63,9 @@ The calculator uses a **stack-based algorithm** with O(n) time complexity:
 "10 3 * 2 ^" → 900 (equivalent to (10 * 3)^2)
 ```
 
-## 🏗️ PART 2: System Design Exercise
+## 🏗️ PART 2: System Design Exercise  
+## Note
+## Enterprise Design: This shows a comprehensive system architecture. Most businesses use simpler solutions that focus on core functionality.
 
 ![System Architecture Diagram](data%20architecture.png)
 
