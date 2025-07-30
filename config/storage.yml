@@ -1,0 +1,35 @@
+# Active Storage configuration for Postfix Calculator
+# Author: Jimmy Lin
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Use local disk storage for production (simple deployment)
+production:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+# Alternative cloud storage configurations (commented out)
+# amazon:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   region: us-east-1
+#   bucket: your_own_bucket
+
+# google:
+#   service: GCS
+#   project: your_project
+#   credentials: <%= Rails.application.credentials.dig(:gcs, :keyfile) %>
+#   bucket: your_own_bucket
+
+# azure:
+#   service: AzureStorage
+#   storage_account_name: your_account_name
+#   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :access_key) %>
+#   container: your_container_name

@@ -1,0 +1,29 @@
+# Docker Compose for RPN Calculator
+# Author: Jimmy Lin
+# Optimized for Dokploy deployment
+
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
+      - RAILS_LOG_TO_STDOUT=true
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE:-$(openssl rand -hex 64)}
+    volumes:
+      # Persist SQLite database (Dokploy will handle this)
+      - app_data:/app/storage
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  app_data:

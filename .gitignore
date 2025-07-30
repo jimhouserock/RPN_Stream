@@ -1,0 +1,47 @@
+# Security - Never commit secrets
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+*.key
+*.pem
+config/master.key
+config/credentials.yml.enc
+
+# Rails
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+
+# Ruby Gems - Bundler
+/vendor/bundle/
+.bundle/
+
+# Database
+*.sqlite3
+*.sqlite3-*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Git configuration updated
